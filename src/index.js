@@ -37,7 +37,7 @@ app.use(express.urlencoded({extended: false}));
 
 //rutas
 app.use(require('./routes/'));
-app.use('/Sede', require('./routes/sede'));
+app.use('/Sedes', require('./routes/sede'));
 
 //public
 app.use(express.static(path.join(__dirname, "public")));

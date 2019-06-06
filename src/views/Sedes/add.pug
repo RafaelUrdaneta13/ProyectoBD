@@ -4,20 +4,23 @@ html
     link(rel='stylesheet', href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
   body
-  p1=message
+  p1.text-aligned=message
     div.container
         div.row
             div.col-md-4
                 div.card 
                     div.card-body
-                    form(action="/Sede/add" method="POST")
-                        div.form-group
-                            input.form-control(type="text" name="nombreFiscal" placeholder="Nombre" autofocus)
+                    form(action="/Sedes/add" method="POST")
+                        div(class="form-group")
+                            input(class="form-control" type="text" name="nombreFiscal" placeholder="Nombre" autofocus)
 
-                        div.form-group
-                            input.form-control(type="text" name="ubicacion" placeholder="Ubicacion")
+                        div(class="form-group")
+                            input(class="form-control" type="text" name="ubicacion" placeholder="Ubicacion")
                             
-                        div.form-group
-                            input.form-control(type="text" name="horario" placeholder="Horario"
-                            )
+                          
+                        div(class="form-group")
+                            input(class="form-control" type="text" name="horario" placeholder="Horario") 
+           
+                        div.btn.btn-success.btn-block Save
+                        
 
