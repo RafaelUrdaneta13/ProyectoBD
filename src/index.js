@@ -9,11 +9,13 @@ const routes = require("./routes/");
 
 
 
+
 //settings
 app.set('port', process.env.PORT || 4000);
 app.set('appName', 'Proyecto');
-app.set("views", path.join(__dirname, "views"));
-app.set('engineView', pug)
+app.set("views", path.join(__dirname, 'views'));
+app.set('engineView', expug)
+
 
 //middlewares
 
@@ -26,10 +28,11 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: false}));
 
 
 // Si no conseguimos el archivo le mandamos 404 al cliente
-//app.use(errorHandlers.notFound);
+//app.use(errorHanpmndlers.notFound);
 
 
 //rutas
