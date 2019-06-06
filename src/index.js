@@ -1,7 +1,6 @@
 //dependencias
 const express = require('express');
 const morgan = require('morgan');
-const expug= require('pug');
 const path = require("path");
 const flash = require("connect-flash");
 const app= express();
@@ -14,7 +13,7 @@ const routes = require("./routes/");
 app.set('port', process.env.PORT || 4000);
 app.set('appName', 'Proyecto');
 app.set("views", path.join(__dirname, "views"));
-app.set('engineView', expug)
+app.set('engineView', pug)
 
 //middlewares
 
