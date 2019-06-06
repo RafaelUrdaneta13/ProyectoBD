@@ -5,7 +5,7 @@ const path = require("path");
 const flash = require("connect-flash");
 const app= express();
 const bodyParser = require("body-parser");
-const routes = require("./routes/");
+
 
 
 
@@ -14,7 +14,7 @@ const routes = require("./routes/");
 app.set('port', process.env.PORT || 4000);
 app.set('appName', 'Proyecto');
 app.set("views", path.join(__dirname, 'views'));
-app.set('engineView', expug)
+app.set('engineView', 'pug')
 
 
 //middlewares
@@ -36,7 +36,8 @@ app.use(express.urlencoded({extended: false}));
 
 
 //rutas
-app.use("/", routes);
+app.use(require('./routes/'));
+app.use('/Sede', require('./routes/sede'));
 
 //public
 app.use(express.static(path.join(__dirname, "public")));
@@ -52,5 +53,4 @@ app.listen(app.get('port'), ()=>{
 });
 
 //exportacion
-
 module.exports = app;
